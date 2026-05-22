@@ -33,6 +33,19 @@ Text Domain: elif-center
   /* Typography → theme.json font presets */
   --font-body: var(--wp--preset--font-family--mulish);
   --font-heading: var(--wp--preset--font-family--fraunces);
+  --text-x-small: var(--wp--preset--font-size--x-small);
+  --text-xx-small: var(--wp--preset--font-size--xx-small);
+  --text-small: var(--wp--preset--font-size--small);
+  --text-small-minus: var(--wp--preset--font-size--small-minus);
+  --text-medium-small: var(--wp--preset--font-size--medium-small);
+  --text-medium: var(--wp--preset--font-size--medium);
+  --text-large-small: var(--wp--preset--font-size--large-small);
+  --text-large: var(--wp--preset--font-size--large);
+  --text-large-plus: var(--wp--preset--font-size--large-plus);
+  --text-x-large: var(--wp--preset--font-size--x-large);
+  --text-xx-large: var(--wp--preset--font-size--xx-large);
+  --text-display-small: var(--wp--preset--font-size--display-small);
+  --text-display: var(--wp--preset--font-size--display);
 
   /* Layout → theme.json */
   --content-size: var(--wp--style--global--content-size);
@@ -136,7 +149,7 @@ html, body { margin: 0; padding: 0; }
  * keeps its own value from the component rule below in the file. */
 /* Eyebrow font-size can be overridden by WP's paragraph/body styles when the
  * element is also a .wp-block-paragraph. Doubled class wins the cascade. */
-.eyebrow.eyebrow { font-size: 11px; }
+.eyebrow.eyebrow { font-size: var(--text-x-small); }
 
 .section-head.section-head   { margin-block-end: var(--section-head-gap-lg); }
 .trio-head.trio-head         { margin-block-end: var(--section-head-gap); }
@@ -153,7 +166,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: var(--wp--preset--font-size--medium);
+  font-size: var(--text-medium);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -177,7 +190,7 @@ body {
 .topbar {
   background: #1e2e44;
   color: var(--tint-cream-88);
-  font-size: 11px;
+  font-size: var(--text-x-small);
   letter-spacing: 0.04em;
   border-bottom: 1px solid rgba(126,184,232,0.12);
 }
@@ -246,7 +259,7 @@ body {
 .brand-nav a {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 13px;
+  font-size: var(--text-small-minus);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -325,7 +338,7 @@ body {
 a.btn-pill {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 12px;
+  font-size: var(--text-xx-small);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 12px 22px;
@@ -344,7 +357,7 @@ a.btn-pill:hover { transform: translateY(-1px) scale(1.03); }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
   font-family: var(--font-body);
-  font-weight: 600; font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase;
+  font-weight: 600; font-size: var(--text-x-small); letter-spacing: 0.34em; text-transform: uppercase;
   color: var(--copper-deep);
   margin-bottom: 22px;
 }
@@ -359,7 +372,7 @@ h1.display, h2.display, .has-display-headline {
   font-family: var(--font-heading);
   font-weight: 400;
   font-variation-settings: "SOFT" 80, "WONK" 0, "opsz" 144;
-  font-size: clamp(44px, 5.2vw, 68px);
+  font-size: var(--text-display);
   line-height: 1.04;
   letter-spacing: -0.015em;
   margin: 0 0 22px;
@@ -376,7 +389,7 @@ h1.display em, h2.display em, .has-display-headline em {
 h2.section-h, .section-h {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(34px, 3.4vw, 44px);
+  font-size: var(--text-display-small);
   line-height: 1.08;
   letter-spacing: -0.01em;
   margin: 0 0 18px;
@@ -392,7 +405,7 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
   display: inline-block;
   font-family: var(--font-heading);
   font-style: italic; font-weight: 300;
-  font-size: 18px; letter-spacing: 0.02em;
+  font-size: var(--text-large-small); letter-spacing: 0.02em;
   color: var(--copper);
   padding: 4px 16px 6px;
   border-top: 1px solid var(--hairline);
@@ -413,7 +426,7 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
 
 .lede {
   font-family: var(--font-body); font-weight: 400;
-  font-size: var(--wp--preset--font-size--medium); line-height: 1.72;
+  font-size: var(--text-medium); line-height: 1.72;
   color: var(--text);
   max-width: 60ch;
   margin: 0 0 32px;
@@ -449,7 +462,7 @@ a.btn,
 button.btn,
 .cta-row .wp-block-button .wp-block-button__link {
   font-family: var(--font-body);
-  font-weight: 600; font-size: var(--wp--preset--font-size--small); letter-spacing: 0.08em; text-transform: uppercase;
+  font-weight: 600; font-size: var(--text-small); letter-spacing: 0.08em; text-transform: uppercase;
   padding: 16px 32px;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -564,7 +577,7 @@ button.btn:hover .btn-arrow,
   z-index: 3;
   background: var(--surface); border: 1px solid var(--hairline);
   padding: 8px 16px; border-radius: var(--radius-pill);
-  font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--font-body); font-size: var(--text-x-small); letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   box-shadow: var(--shadow-soft);
   display: inline-block;
@@ -583,7 +596,7 @@ button.btn:hover .btn-arrow,
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
 }
 .mood-item .mood-eyebrow {
-  font-family: var(--font-body); font-weight: 600; font-size: 11px;
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-x-small);
   letter-spacing: 0.34em; text-transform: uppercase;
   color: var(--copper-deep);
   display: block; margin-bottom: 12px;
@@ -600,7 +613,7 @@ button.btn:hover .btn-arrow,
 .section-head .eyebrow { justify-content: center; }
 .section-head p {
   font-family: var(--font-body); color: var(--text-muted);
-  font-size: var(--wp--preset--font-size--medium); line-height: 1.7;
+  font-size: var(--text-medium); line-height: 1.7;
   margin: 0 auto; max-width: 56ch;
 }
 
@@ -659,7 +672,7 @@ button.btn:hover .btn-arrow,
 }
 .cat-card .tag-pill {
   position: relative; z-index: 2; align-self: flex-start;
-  font-family: var(--font-body); font-size: 11px;
+  font-family: var(--font-body); font-size: var(--text-x-small);
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-deep);
   background: var(--surface); border: 1px solid var(--hairline);
   padding: 6px 12px; border-radius: var(--radius-pill);
@@ -669,7 +682,7 @@ button.btn:hover .btn-arrow,
 .cat-card .wp-block-heading {
   position: relative; z-index: 2;
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 24px; line-height: 1.15;
+  font-size: var(--text-large-plus); line-height: 1.15;
   margin: 0; color: var(--text);
 }
 .cat-card p {
@@ -679,7 +692,7 @@ button.btn:hover .btn-arrow,
 }
 .cat-card .card-link {
   position: relative; z-index: 2; margin-top: auto; padding-top: 14px;
-  font-family: var(--font-body); font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-xx-small);
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
@@ -974,9 +987,9 @@ button.btn:hover .btn-arrow,
   font-size: 19px; line-height: 1.5; color: var(--text);
   text-wrap: pretty; border: 0; background: transparent;
 }
-.quote-card .author { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--text); margin: 0; }
+.quote-card .author { font-family: var(--font-body); font-weight: 600; font-size: var(--text-small-minus); color: var(--text); margin: 0; }
 .quote-card .role {
-  font-family: var(--font-body); font-size: 11px;
+  font-family: var(--font-body); font-size: var(--text-x-small);
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 4px 0 0;
@@ -1028,13 +1041,13 @@ a.channel-link {
 }
 a.channel-link:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); background: var(--surface); }
 a.channel-link .label {
-  font-family: var(--font-body); font-weight: 600; font-size: 11px;
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-x-small);
   letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 a.channel-link .value {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--medium); color: var(--text);
+  font-size: var(--text-medium); color: var(--text);
 }
 /* When channel-link is on a <p> wrapper, the wrapper is just a transparent shell. */
 p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: none; }
@@ -1067,26 +1080,26 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .foot-col h4,
 .foot-col .wp-block-heading {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep); margin: 0 0 14px;
 }
 .foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .foot-col a {
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
+  font-family: var(--font-body); font-size: var(--text-small);
   color: var(--text-muted); text-decoration: none;
   transition: color .35s var(--ease-spa);
 }
 .foot-col a:hover { color: var(--copper-deep); }
 .foot-col .signature {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--medium); color: var(--copper-deep);
+  font-size: var(--text-medium); color: var(--copper-deep);
   display: block; margin-top: 10px;
 }
 .foot-bottom {
   max-width: var(--wide-size); margin: 36px auto 0;
   padding-top: 24px; border-top: 1px solid var(--hairline);
   display: flex; justify-content: space-between; align-items: center;
-  font-family: var(--font-body); font-size: 11px;
+  font-family: var(--font-body); font-size: var(--text-x-small);
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted);
 }
 
@@ -1197,7 +1210,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .trio-card:hover .stage .wp-block-image img { transform: translateY(-4px) scale(1.02); }
 .trio-card .cat-tag {
   align-self: flex-start;
-  font-family: var(--font-body); font-size: 11px;
+  font-family: var(--font-body); font-size: var(--text-x-small);
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-deep);
   background: var(--surface-2); border: 1px solid var(--hairline);
   padding: 6px 12px; border-radius: var(--radius-pill);
@@ -1222,7 +1235,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   position: relative; z-index: 2;
 }
 .trio-card .feat-list li {
-  font-family: var(--font-body); font-size: 13px; line-height: 1.5;
+  font-family: var(--font-body); font-size: var(--text-small-minus); line-height: 1.5;
   color: var(--text-muted); padding-left: 16px; position: relative;
 }
 .trio-card .feat-list li::before {
@@ -1232,7 +1245,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .trio-card .card-link {
   margin-top: auto;
-  font-family: var(--font-body); font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-xx-small);
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
@@ -1268,27 +1281,27 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .toc-list li { padding: 0; margin: 0; }
 .toc-num {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--x-large); color: var(--copper-deep);
+  font-size: var(--text-x-large); color: var(--copper-deep);
   letter-spacing: 0.05em;
 }
 .toc-label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep); display: block; margin-bottom: 6px;
 }
 .toc-title {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 24px; line-height: 1.15;
+  font-size: var(--text-large-plus); line-height: 1.15;
   color: var(--text); text-wrap: balance; display: block;
 }
 .toc-title em { font-style: italic; font-weight: 300; color: var(--copper-deep); }
 .toc-items {
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small); line-height: 1.55;
+  font-family: var(--font-body); font-size: var(--text-small); line-height: 1.55;
   color: var(--text-muted); text-wrap: pretty;
 }
 .toc-arrow {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: var(--text-xx-small); letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   display: inline-flex; align-items: center; gap: 8px;
   border-bottom: 1px solid var(--copper-soft); padding-bottom: 4px;
@@ -1328,12 +1341,12 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .step-card h3,
 .step-card .wp-block-heading {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: var(--wp--preset--font-size--large); line-height: 1.2;
+  font-size: var(--text-large); line-height: 1.2;
   margin: 0 0 12px; color: var(--text);
   position: relative; z-index: 1; text-wrap: balance;
 }
 .step-card p {
-  font-family: var(--font-body); font-size: 15px; line-height: 1.65;
+  font-family: var(--font-body); font-size: var(--text-medium-small); line-height: 1.65;
   color: var(--text-muted); margin: 0;
   position: relative; z-index: 1; text-wrap: pretty;
 }
@@ -1389,7 +1402,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .whatsapp-direct {
   display: inline-block; margin-top: 28px;
   font-family: var(--font-body); font-weight: 600;
-  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: var(--text-xx-small); letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--cream);
   border-bottom: 1px solid var(--copper-soft); padding-bottom: 4px;
   text-decoration: none;
@@ -1417,7 +1430,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   margin: 0 auto 32px; max-width: 22ch; text-wrap: balance;
 }
 .story-prose p {
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--medium); line-height: 1.72;
+  font-family: var(--font-body); font-size: var(--text-medium); line-height: 1.72;
   color: var(--text); margin: 0 auto 16px;
   max-width: 62ch; text-wrap: pretty;
 }
@@ -1462,12 +1475,12 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .pillar h3,
 .pillar .wp-block-heading {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 24px; line-height: 1.2;
+  font-size: var(--text-large-plus); line-height: 1.2;
   margin: 0 0 12px; color: var(--text);
   position: relative; z-index: 1;
 }
 .pillar p {
-  font-family: var(--font-body); font-size: 15px; line-height: 1.65;
+  font-family: var(--font-body); font-size: var(--text-medium-small); line-height: 1.65;
   color: var(--text-muted); margin: 0;
   position: relative; z-index: 1; text-wrap: pretty;
 }
@@ -1507,11 +1520,11 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .benefit-item h4,
 .benefit-item .wp-block-heading {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: 18px; line-height: 1.2;
+  font-size: var(--text-large-small); line-height: 1.2;
   margin: 0 0 8px; color: var(--text);
 }
 .benefit-item p {
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small); line-height: 1.6;
+  font-family: var(--font-body); font-size: var(--text-small); line-height: 1.6;
   color: var(--text-muted); margin: 0; text-wrap: pretty;
 }
 
@@ -1526,7 +1539,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .audience-chip {
   font-family: var(--font-heading); font-style: italic; font-weight: 400;
-  font-size: var(--wp--preset--font-size--medium);
+  font-size: var(--text-medium);
   padding: 12px 22px;
   background: var(--surface); border: 1px solid var(--hairline);
   border-radius: var(--radius-pill);
@@ -1581,13 +1594,13 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .form-field.wide { grid-column: 1 / -1; }
 .form-field label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 .form-field input,
 .form-field select,
 .form-field textarea {
-  font-family: var(--font-body); font-size: 15px;
+  font-family: var(--font-body); font-size: var(--text-medium-small);
   color: var(--text); background: var(--bg);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-soft);
@@ -1635,19 +1648,19 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .info-card h3,
 .info-card .wp-block-heading {
   font-family: var(--font-heading); font-weight: 500;
-  font-size: var(--wp--preset--font-size--large); line-height: 1.2;
+  font-size: var(--text-large); line-height: 1.2;
   margin: 0 0 18px; color: var(--text);
 }
 .info-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
 .info-list li { display: flex; flex-direction: column; gap: 2px; }
 .info-list .label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 .info-list .value {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--medium); color: var(--text);
+  font-size: var(--text-medium); color: var(--text);
 }
 .info-list a.value {
   text-decoration: underline; text-decoration-thickness: 1px;
@@ -1663,19 +1676,19 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .hours-card .label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
   display: block; margin-bottom: 8px;
 }
 .hours-card .hours {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--large); line-height: 1.3; color: var(--text);
+  font-size: var(--text-large); line-height: 1.3; color: var(--text);
   margin: 0;
 }
 .hours-card .location {
   margin-top: 14px; padding-top: 14px;
   border-top: 1px solid var(--hairline);
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
+  font-family: var(--font-body); font-size: var(--text-small);
   color: var(--text-muted);
 }
 .hours-card .location strong { color: var(--text); font-weight: 600; }
@@ -1771,7 +1784,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .faq-item > p,
 .faq-item .wp-block-details__content {
   padding: 0 28px 24px;
-  font-family: var(--font-body); font-size: 15px; line-height: 1.7;
+  font-family: var(--font-body); font-size: var(--text-medium-small); line-height: 1.7;
   color: var(--text-muted); text-wrap: pretty;
 }
 .faq-answer p { margin: 0; }
@@ -1833,7 +1846,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   .logo-mark img { height: 64px; }
   .brand-cta { order: 3; }
   .brand-cta .btn-pill .wp-block-button__link,
-  a.brand-cta.btn-pill { padding: 12px 20px; font-size: 11px; }
+  a.brand-cta.btn-pill { padding: 12px 20px; font-size: var(--text-x-small); }
   .brand-burger { display: inline-flex; order: 2; }
 
   .brand-nav {
@@ -1912,7 +1925,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   .foot-inner { grid-template-columns: 1fr; }
   .foot-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
   a.channel-link, p.channel-link a { flex-direction: column; align-items: flex-start; gap: 4px; border-radius: var(--radius-soft); }
-  .faq-item summary { font-size: var(--wp--preset--font-size--medium); padding: 18px 22px; }
+  .faq-item summary { font-size: var(--text-medium); padding: 18px 22px; }
   .faq-answer { padding: 0 22px 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1941,12 +1954,12 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* Form fields rendered as paragraphs (no <input> in core blocks) */
 .form-field .form-label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 0;
 }
 .form-field .form-input {
-  font-family: var(--font-body); font-size: 15px;
+  font-family: var(--font-body); font-size: var(--text-medium-small);
   color: var(--text-muted);
   background: var(--bg);
   border: 1px solid var(--hairline);
@@ -1956,7 +1969,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   min-height: 48px;
 }
 .form-field .form-textarea {
-  font-family: var(--font-body); font-size: 15px;
+  font-family: var(--font-body); font-size: var(--text-medium-small);
   color: var(--text-muted);
   background: var(--bg);
   border: 1px solid var(--hairline);
@@ -1973,7 +1986,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--gradient-button);
   color: var(--surface);
-  font-family: var(--font-body); font-weight: 600; font-size: var(--wp--preset--font-size--small);
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-small);
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 16px 32px;
   border-radius: var(--radius-pill);
@@ -1989,14 +2002,14 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .info-list .info-item .label,
 .info-list .info-item p.label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 0;
 }
 .info-list .info-item .value,
 .info-list .info-item p.value {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--medium); color: var(--text);
+  font-size: var(--text-medium); color: var(--text);
   margin: 0;
 }
 .info-list .info-item p.value a {
@@ -2010,7 +2023,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* Hours card location block */
 .hours-card .location p {
   margin: 0;
-  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
+  font-family: var(--font-body); font-size: var(--text-small);
   color: var(--text-muted);
 }
 .hours-card .location p strong { color: var(--text); font-weight: 600; }
@@ -2029,12 +2042,12 @@ p.channel-link a {
 p.channel-link a:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); background: var(--surface); }
 p.channel-link a .label {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+  font-size: var(--text-x-small); letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 p.channel-link a .value {
   font-family: var(--font-heading); font-style: italic; font-weight: 300;
-  font-size: var(--wp--preset--font-size--medium); color: var(--text);
+  font-size: var(--text-medium); color: var(--text);
 }
 
 /* Card-link rendered as paragraph */
@@ -2042,7 +2055,7 @@ p.card-link {
   margin: 0;
 }
 p.card-link a {
-  font-family: var(--font-body); font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: var(--text-xx-small);
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px;
@@ -2116,7 +2129,7 @@ p.toc-row a:hover .toc-arrow { color: var(--aubergine); transform: translateX(4p
   display: block;
 }
 .pdf-cta-content .whatsapp-direct a {
-  font-family: var(--font-body); font-size: 13px;
+  font-family: var(--font-body); font-size: var(--text-small-minus);
   color: var(--tint-cream-70); text-decoration: underline;
   text-decoration-color: var(--copper-soft); text-underline-offset: 4px;
 }
@@ -2131,7 +2144,7 @@ p.audience-chip,
 .audience-chip {
   margin: 0;
   font-family: var(--font-body); font-weight: 500;
-  font-size: var(--wp--preset--font-size--small); letter-spacing: 0.04em;
+  font-size: var(--text-small); letter-spacing: 0.04em;
   color: var(--text);
   background: var(--surface);
   border: 1px solid var(--hairline);
@@ -2210,7 +2223,7 @@ p.audience-chip:hover,
 /* FAQ inner content (the wp:paragraph inside details) */
 .faq-item > p {
   padding: 0 28px 24px;
-  font-family: var(--font-body); font-size: 15px; line-height: 1.7;
+  font-family: var(--font-body); font-size: var(--text-medium-small); line-height: 1.7;
   color: var(--text-muted); text-wrap: pretty;
   margin: 0;
 }
@@ -2227,7 +2240,7 @@ p.audience-chip:hover,
 .pdf-cta-content h2,
 .pdf-cta-content .wp-block-heading {
   font-family: var(--font-heading); font-weight: 400;
-  font-size: clamp(34px, 3.4vw, 44px); line-height: 1.1;
+  font-size: var(--text-display-small); line-height: 1.1;
   color: var(--cream); margin: 0 0 18px; text-wrap: balance;
 }
 .pdf-cta-content h2 em,
