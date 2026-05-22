@@ -1564,6 +1564,9 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   display: grid; grid-template-columns: 1.2fr 1fr;
   gap: 48px; align-items: start;
 }
+.fluentform #fluentform_3 {
+  row-gap: 0;
+}
 .form-card {
   background: var(--surface); border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
@@ -1585,11 +1588,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .form-card .form-intro {
   font-family: var(--font-body); font-size: 14.5px;
-  color: var(--text-muted); margin: 0 0 28px;
-  position: relative; z-index: 1;
-}
-.form-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px;
+  color: var(--text-muted); margin: 0;
   position: relative; z-index: 1;
 }
 .form-field { display: flex; flex-direction: column; gap: 6px; }
