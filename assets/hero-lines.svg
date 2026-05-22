@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice">
+  <g stroke="#C8A97E" stroke-width="0.7" fill="none" opacity="0.28">
+
+    <!--
+      Each path is a two-segment cubic bezier that passes through
+      the focal point ~(400,265), curving organically on each side.
+      Format: M start C cp1 FOCAL C cp2 end
+    -->
+
+    <!-- top-left → bottom-right -->
+    <path d="M -20,0   C  60,180  280,260  400,265  C 520,270  800,340  920,520"/>
+    <!-- top-center-left → right-center -->
+    <path d="M 160,0   C 200,140  320,240  400,265  C 480,290  740,300  920,310"/>
+    <!-- top-center → bottom-center -->
+    <path d="M 380,0   C 460, 90  420,200  400,265  C 380,330  340,460  330,560"/>
+    <!-- top-right → bottom-left -->
+    <path d="M 680,0   C 600,120  460,220  400,265  C 340,310  160,440   60,560"/>
+    <!-- top-far-right → left-middle -->
+    <path d="M 900, 20  C 740,100  520,210  400,265  C 300,310   80,360  -20,380"/>
+    <!-- right-upper → left-upper -->
+    <path d="M 920,160  C 720,160  540,230  400,265  C 280,296   80,220  -20,180"/>
+    <!-- right-lower → left-lower -->
+    <path d="M 920,400  C 700,360  540,300  400,265  C 280,235   80,160  -20,100"/>
+    <!-- right-bottom → top-left -->
+    <path d="M 900,540  C 680,440  520,330  400,265  C 300,210  140,100  -10, 10"/>
+    <!-- bottom-right → top-center -->
+    <path d="M 720,560  C 580,440  460,320  400,265  C 360,220  320,120  290,  0"/>
+    <!-- bottom-center → top-right -->
+    <path d="M 440,560  C 460,420  440,320  400,265  C 380,220  500, 80  700,  0"/>
+    <!-- bottom-left → right-top -->
+    <path d="M 160,560  C 260,420  360,320  400,265  C 440,210  680, 80  900, 20"/>
+    <!-- left-bottom → top-right-far -->
+    <path d="M -20,460  C 100,360  300,300  400,265  C 500,230  760,100  900, 60"/>
+
+  </g>
+</svg>
