@@ -110,7 +110,7 @@
       "button": {
         "color": {
           "background": "var(--wp--preset--gradient--button-primary)",
-          "text": "#FBF5EA"
+          "text": "var(--wp--preset--color--surface)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--mulish)",

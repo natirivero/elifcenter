@@ -14,30 +14,73 @@ Text Domain: elif-center
 */
 
 :root {
-  --copper: #B87333;
-  --copper-deep: #8E4F1F;
-  --copper-soft: #D49866;
-  --aubergine: #3D1E2A;
-  --aubergine-deep: #23121A;
-  --rose-tan: #E7C8B0;
-  --rose-tan-soft: #F0D9C5;
-  --bg: #F4EBDF;
-  --bg-warm: #EFE2D2;
-  --surface: #FBF5EA;
-  --surface-2: #F9EEDF;
-  --text: #2A1218;
-  --text-muted: #5A3A40;
-  --hairline: rgba(61,30,42,0.16);
-  --halo-from: rgba(231,200,176,0.85);
-  --halo-to: rgba(244,235,223,0);
+  /* Palette → theme.json color presets */
+  --copper: var(--wp--preset--color--copper);
+  --copper-deep: var(--wp--preset--color--copper-deep);
+  --copper-soft: var(--wp--preset--color--copper-soft);
+  --aubergine: var(--wp--preset--color--aubergine);
+  --aubergine-deep: var(--wp--preset--color--aubergine-deep);
+  --rose-tan: var(--wp--preset--color--rose-tan);
+  --rose-tan-soft: var(--wp--preset--color--rose-tan-soft);
+  --bg: var(--wp--preset--color--background);
+  --bg-warm: var(--wp--preset--color--background-warm);
+  --surface: var(--wp--preset--color--surface);
+  --surface-2: var(--wp--preset--color--surface-2);
+  --text: var(--wp--preset--color--text);
+  --text-muted: var(--wp--preset--color--text-muted);
+  --cream: var(--wp--preset--color--cream);
+
+  /* Typography → theme.json font presets */
+  --font-body: var(--wp--preset--font-family--mulish);
+  --font-heading: var(--wp--preset--font-family--fraunces);
+
+  /* Layout → theme.json */
+  --content-size: var(--wp--style--global--content-size);
+  --wide-size: var(--wp--style--global--wide-size);
+
+  /* Gradients → theme.json */
+  --gradient-button: var(--wp--preset--gradient--button-primary);
+  --gradient-brand-bar: var(--wp--preset--gradient--brand-bar);
+  --gradient-footer: var(--wp--preset--gradient--footer);
+  --gradient-dark: var(--wp--preset--gradient--dark);
+
+  /* Derived tints (palette + opacity — not in theme.json) */
+  --hairline: color-mix(in srgb, var(--aubergine) 16%, transparent);
+  --halo-from: color-mix(in srgb, var(--rose-tan) 85%, transparent);
+  --halo-to: transparent;
+  --tint-cream-88: color-mix(in srgb, var(--cream) 88%, transparent);
+  --tint-cream-85: color-mix(in srgb, var(--cream) 85%, transparent);
+  --tint-cream-70: color-mix(in srgb, var(--cream) 70%, transparent);
+  --tint-copper-deep-8: color-mix(in srgb, var(--copper-deep) 8%, transparent);
+  --tint-copper-deep-16: color-mix(in srgb, var(--copper-deep) 16%, transparent);
+  --tint-copper-deep-22: color-mix(in srgb, var(--copper-deep) 22%, transparent);
+  --tint-copper-deep-55: color-mix(in srgb, var(--copper-deep) 55%, transparent);
+  --tint-copper-deep-65: color-mix(in srgb, var(--copper-deep) 65%, transparent);
+  --tint-aubergine-6: color-mix(in srgb, var(--aubergine) 6%, transparent);
+  --tint-aubergine-22: color-mix(in srgb, var(--aubergine) 22%, transparent);
+  --tint-copper-4: color-mix(in srgb, var(--copper) 4%, transparent);
+  --tint-copper-7: color-mix(in srgb, var(--copper) 7%, transparent);
+  --tint-copper-12: color-mix(in srgb, var(--copper) 12%, transparent);
+  --tint-copper-18: color-mix(in srgb, var(--copper) 18%, transparent);
+  --tint-copper-20: color-mix(in srgb, var(--copper) 20%, transparent);
+  --tint-copper-35: color-mix(in srgb, var(--copper) 35%, transparent);
+  --tint-copper-45: color-mix(in srgb, var(--copper) 45%, transparent);
+  --tint-copper-60: color-mix(in srgb, var(--copper) 60%, transparent);
+  --tint-copper-soft-10: color-mix(in srgb, var(--copper-soft) 10%, transparent);
+  --tint-copper-soft-12: color-mix(in srgb, var(--copper-soft) 12%, transparent);
+  --tint-copper-soft-45: color-mix(in srgb, var(--copper-soft) 45%, transparent);
+  --tint-rose-tan-10: color-mix(in srgb, var(--rose-tan) 10%, transparent);
+  --tint-rose-tan-20: color-mix(in srgb, var(--rose-tan) 20%, transparent);
+  --tint-rose-tan-30: color-mix(in srgb, var(--rose-tan) 30%, transparent);
+  --tint-rose-tan-35: color-mix(in srgb, var(--rose-tan) 35%, transparent);
+
+  /* Theme-only tokens */
   --radius-pill: 999px;
   --radius-soft: 22px;
   --radius-card: 28px;
-  --shadow-card: 0 28px 60px -32px rgba(61,30,42,0.35), 0 6px 16px -10px rgba(61,30,42,0.18);
-  --shadow-soft: 0 14px 30px -18px rgba(61,30,42,0.28);
+  --shadow-card: 0 28px 60px -32px color-mix(in srgb, var(--aubergine) 35%, transparent), 0 6px 16px -10px color-mix(in srgb, var(--aubergine) 18%, transparent);
+  --shadow-soft: 0 14px 30px -18px color-mix(in srgb, var(--aubergine) 28%, transparent);
   --ease-spa: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --content-size: 880px;
-  --wide-size: 1280px;
   --gradient-light: linear-gradient(180deg, var(--bg-warm) 0%, #FAF7F3 100%);
   --section-head-gap: 48px;
   --section-head-gap-lg: clamp(32px, 7vw, 56px);
@@ -109,14 +152,14 @@ html, body { margin: 0; padding: 0; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Mulish', system-ui, sans-serif;
-  font-size: 17px;
+  font-family: var(--font-body);
+  font-size: var(--wp--preset--font-size--medium);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-image:
-    radial-gradient(1100px 700px at 12% -10%, rgba(231,200,176,0.55), transparent 60%),
-    radial-gradient(900px 600px at 110% 110%, rgba(184,115,51,0.10), transparent 55%);
+    radial-gradient(1100px 700px at 12% -10%, color-mix(in srgb, var(--rose-tan) 55%, transparent), transparent 60%),
+    radial-gradient(900px 600px at 110% 110%, color-mix(in srgb, var(--copper) 10%, transparent), transparent 55%);
   background-attachment: fixed;
 }
 
@@ -126,14 +169,14 @@ body {
 .wp-site-blocks > footer { margin-block-start: 0; }
 
 /* Constrain shared utilities */
-.wide-width { max-width: var(--wide-size); margin: 0 auto; padding: 0 32px; }
-.content-width { max-width: var(--content-size); margin: 0 auto; padding: 0 32px; }
+.wide-width { max-width: var(--wide-size); margin: 0 auto; padding: 0 var(--wp--preset--spacing--50); }
+.content-width { max-width: var(--content-size); margin: 0 auto; padding: 0 var(--wp--preset--spacing--50); }
 
 /* ===================== BRAND BAR / HEADER ===================== */
 /* ===================== TOP BAR ===================== */
 .topbar {
   background: #1e2e44;
-  color: rgba(240,229,214,0.88);
+  color: var(--tint-cream-88);
   font-size: 11px;
   letter-spacing: 0.04em;
   border-bottom: 1px solid rgba(126,184,232,0.12);
@@ -150,16 +193,16 @@ body {
   flex-wrap: wrap;
 }
 .topbar-item { display: flex; align-items: center; gap: 5px; }
-.topbar-tagline { margin-right: auto; font-style: italic; color: rgba(240,229,214,0.88); }
+.topbar-tagline { margin-right: auto; font-style: italic; color: var(--tint-cream-88); }
 .topbar-contact {
-  color: rgba(240,229,214,0.88);
+  color: var(--tint-cream-88);
   text-decoration: none;
   transition: color .2s;
 }
 .topbar-contact:hover { color: var(--copper-soft); }
 .topbar-divider {
   width: 1px; height: 12px;
-  background: rgba(231,200,176,0.20);
+  background: var(--tint-rose-tan-20);
 }
 @media (max-width: 768px) {
   .topbar-tagline,
@@ -201,7 +244,7 @@ body {
 .brand-nav .nav-item a,
 .brand-nav p a,
 .brand-nav a {
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.18em;
@@ -235,7 +278,7 @@ body {
   display: none;
   appearance: none;
   -webkit-appearance: none;
-  background: rgba(142,79,31,0.08);
+  background: var(--tint-copper-deep-8);
   border: 0;
   padding: 10px;
   margin: 0;
@@ -250,10 +293,10 @@ body {
   transition: background-color .2s var(--ease-spa), transform .2s var(--ease-spa);
 }
 .brand-burger:hover {
-  background-color: rgba(142,79,31,0.16);
+  background-color: var(--tint-copper-deep-16);
   transform: scale(1.08);
 }
-.brand-burger:active { background-color: rgba(142,79,31,0.22); transform: scale(0.96); }
+.brand-burger:active { background-color: var(--tint-copper-deep-22); transform: scale(0.96); }
 .brand-burger:focus-visible { outline: 2px solid var(--copper-deep); outline-offset: 2px; }
 .brand-burger-bar {
   display: block;
@@ -280,17 +323,17 @@ body {
 /* Actual visual styling lives on the inner link */
 .btn-pill .wp-block-button__link,
 a.btn-pill {
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 12px 22px;
   border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, var(--copper) 0%, var(--copper-deep) 100%);
-  color: #FBF5EA !important;
+  background: var(--gradient-button);
+  color: var(--surface) !important;
   text-decoration: none;
-  box-shadow: 0 8px 22px -12px rgba(142,79,31,0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+  box-shadow: 0 8px 22px -12px var(--tint-copper-deep-55), inset 0 1px 0 rgba(255,255,255,0.18);
   transition: transform .35s var(--ease-spa), box-shadow .35s var(--ease-spa);
   display: inline-block;
 }
@@ -300,7 +343,7 @@ a.btn-pill:hover { transform: translateY(-1px) scale(1.03); }
 /* ===================== TYPOGRAPHY ===================== */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 12px;
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600; font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase;
   color: var(--copper-deep);
   margin-bottom: 22px;
@@ -313,7 +356,7 @@ a.btn-pill:hover { transform: translateY(-1px) scale(1.03); }
 }
 
 h1.display, h2.display, .has-display-headline {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   font-variation-settings: "SOFT" 80, "WONK" 0, "opsz" 144;
   font-size: clamp(44px, 5.2vw, 68px);
@@ -331,7 +374,7 @@ h1.display em, h2.display em, .has-display-headline em {
 }
 
 h2.section-h, .section-h {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   font-size: clamp(34px, 3.4vw, 44px);
   line-height: 1.08;
@@ -347,7 +390,7 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
 
 .tagline-en {
   display: inline-block;
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-heading);
   font-style: italic; font-weight: 300;
   font-size: 18px; letter-spacing: 0.02em;
   color: var(--copper);
@@ -369,8 +412,8 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
 .tagline-en::after { right: -10px; }
 
 .lede {
-  font-family: 'Mulish', sans-serif; font-weight: 400;
-  font-size: 17px; line-height: 1.72;
+  font-family: var(--font-body); font-weight: 400;
+  font-size: var(--wp--preset--font-size--medium); line-height: 1.72;
   color: var(--text);
   max-width: 60ch;
   margin: 0 0 32px;
@@ -378,7 +421,7 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
 }
 
 .prose p {
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--font-body);
   color: var(--text); line-height: 1.72;
   margin: 0 0 16px; text-wrap: pretty;
 }
@@ -405,8 +448,8 @@ h2.section-h em, .section-h em { font-style: italic; font-weight: 300; color: va
 a.btn,
 button.btn,
 .cta-row .wp-block-button .wp-block-button__link {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: var(--font-body);
+  font-weight: 600; font-size: var(--wp--preset--font-size--small); letter-spacing: 0.08em; text-transform: uppercase;
   padding: 16px 32px;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -423,9 +466,9 @@ a.btn-primary,
 button.btn-primary,
 .is-style-btn-primary .wp-block-button__link,
 .wp-block-button.btn-primary .wp-block-button__link {
-  background: linear-gradient(180deg, var(--copper) 0%, var(--copper-deep) 100%);
-  color: #FBF5EA;
-  box-shadow: 0 12px 28px -14px rgba(142,79,31,0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+  background: var(--gradient-button);
+  color: var(--surface);
+  box-shadow: 0 12px 28px -14px var(--tint-copper-deep-55), inset 0 1px 0 rgba(255,255,255,0.18);
   border: 1px solid transparent;
 }
 a.btn-primary:hover,
@@ -433,7 +476,7 @@ button.btn-primary:hover,
 .is-style-btn-primary .wp-block-button__link:hover,
 .wp-block-button.btn-primary .wp-block-button__link:hover {
   transform: scale(1.035) translateY(-1px);
-  box-shadow: 0 18px 38px -16px rgba(142,79,31,0.65), inset 0 1px 0 rgba(255,255,255,0.22);
+  box-shadow: 0 18px 38px -16px var(--tint-copper-deep-65), inset 0 1px 0 rgba(255,255,255,0.22);
 }
 
 a.btn-secondary,
@@ -449,7 +492,7 @@ button.btn-secondary:hover,
 .is-style-btn-secondary .wp-block-button__link:hover,
 .wp-block-button.btn-secondary .wp-block-button__link:hover {
   transform: scale(1.035) translateY(-1px);
-  background: rgba(61,30,42,0.06);
+  background: var(--tint-aubergine-6);
 }
 
 .btn-arrow { display: inline-block; transition: transform .45s var(--ease-spa); }
@@ -472,7 +515,7 @@ button.btn:hover .btn-arrow,
 }
 .hero-inner.hero-centered,
 .hero.hero-centered .hero-inner {
-  display: block; max-width: 880px;
+  display: block; max-width: var(--content-size);
 }
 .hero-copy { position: relative; z-index: 2; }
 
@@ -492,7 +535,7 @@ button.btn:hover .btn-arrow,
 
 .product-ring {
   position: absolute; inset: 4%; border-radius: 50%;
-  border: 1px dashed rgba(184,115,51,0.35);
+  border: 1px dashed var(--tint-copper-35);
   z-index: 1;
   animation: rotate 60s linear infinite;
   display: block;
@@ -503,14 +546,14 @@ button.btn:hover .btn-arrow,
   width: 10px; height: 10px;
   transform: translateX(-50%);
   background: var(--copper); border-radius: 50%;
-  box-shadow: 0 0 12px rgba(184,115,51,0.6);
+  box-shadow: 0 0 12px var(--tint-copper-60);
 }
 
 .product-stage img,
 .product-stage .wp-block-image img {
   position: relative; z-index: 2;
   max-width: 88%; max-height: 100%; width: auto; height: auto; object-fit: contain;
-  filter: drop-shadow(0 30px 26px rgba(61,30,42,0.22));
+  filter: drop-shadow(0 30px 26px var(--tint-aubergine-22));
   transition: transform 1.2s var(--ease-spa);
 }
 .product-stage:hover img,
@@ -521,7 +564,7 @@ button.btn:hover .btn-arrow,
   z-index: 3;
   background: var(--surface); border: 1px solid var(--hairline);
   padding: 8px 16px; border-radius: var(--radius-pill);
-  font-family: 'Mulish', sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+  font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   box-shadow: var(--shadow-soft);
   display: inline-block;
@@ -540,13 +583,13 @@ button.btn:hover .btn-arrow,
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
 }
 .mood-item .mood-eyebrow {
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 11px;
+  font-family: var(--font-body); font-weight: 600; font-size: 11px;
   letter-spacing: 0.34em; text-transform: uppercase;
   color: var(--copper-deep);
   display: block; margin-bottom: 12px;
 }
 .mood-item p {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
   font-size: 19px; line-height: 1.45;
   color: var(--text); margin: 0; text-wrap: pretty;
 }
@@ -556,8 +599,8 @@ button.btn:hover .btn-arrow,
 .section-head { max-width: 720px; margin: 0 auto var(--section-head-gap-lg); text-align: center; }
 .section-head .eyebrow { justify-content: center; }
 .section-head p {
-  font-family: 'Mulish', sans-serif; color: var(--text-muted);
-  font-size: 17px; line-height: 1.7;
+  font-family: var(--font-body); color: var(--text-muted);
+  font-size: var(--wp--preset--font-size--medium); line-height: 1.7;
   margin: 0 auto; max-width: 56ch;
 }
 
@@ -599,7 +642,7 @@ button.btn:hover .btn-arrow,
 .cat-card .render img,
 .cat-card .render .wp-block-image img {
   max-width: 70%; max-height: 100%; object-fit: contain;
-  filter: drop-shadow(0 18px 20px rgba(61,30,42,0.22));
+  filter: drop-shadow(0 18px 20px var(--tint-aubergine-22));
 }
 .cat-card .render.motif { position: relative; }
 .cat-card .render.motif .lotus-mark {
@@ -616,7 +659,7 @@ button.btn:hover .btn-arrow,
 }
 .cat-card .tag-pill {
   position: relative; z-index: 2; align-self: flex-start;
-  font-family: 'Mulish', sans-serif; font-size: 11px;
+  font-family: var(--font-body); font-size: 11px;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-deep);
   background: var(--surface); border: 1px solid var(--hairline);
   padding: 6px 12px; border-radius: var(--radius-pill);
@@ -625,18 +668,18 @@ button.btn:hover .btn-arrow,
 .cat-card h3,
 .cat-card .wp-block-heading {
   position: relative; z-index: 2;
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 24px; line-height: 1.15;
   margin: 0; color: var(--text);
 }
 .cat-card p {
   position: relative; z-index: 2;
-  font-family: 'Mulish', sans-serif; font-size: 14.5px; line-height: 1.6;
+  font-family: var(--font-body); font-size: 14.5px; line-height: 1.6;
   color: var(--text-muted); margin: 0; text-wrap: pretty;
 }
 .cat-card .card-link {
   position: relative; z-index: 2; margin-top: auto; padding-top: 14px;
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: 12px;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
@@ -653,8 +696,8 @@ button.btn:hover .btn-arrow,
 
 /* ===================== FEATURED DARK ===================== */
 .featured-dark {
-  background: linear-gradient(180deg, var(--aubergine) 0%, var(--aubergine-deep) 100%);
-  color: #F0E5D6;
+  background: var(--gradient-dark);
+  color: var(--cream);
   padding: clamp(5rem, 8vw, 7rem) 32px;
   position: relative; overflow: hidden;
 }
@@ -663,7 +706,7 @@ button.btn:hover .btn-arrow,
   background:
     linear-gradient(to right, rgba(17,34,64,0.93) 0%, rgba(13,27,46,0.78) 55%, rgba(13,27,46,0.55) 100%),
     url('assets/hero-productos-ref.webp') center / cover no-repeat;
-  color: #F0E5D6;
+  color: var(--cream);
 }
 .hero-dark::before {
   content: ""; position: absolute; inset: 0;
@@ -683,7 +726,7 @@ button.btn:hover .btn-arrow,
 .hero-dark .display,
 .hero-dark .wp-block-heading,
 .hero-sobre .display,
-.hero-sobre .wp-block-heading { color: #F0E5D6; }
+.hero-sobre .wp-block-heading { color: var(--cream); }
 .hero-dark .display em,
 .hero-dark .wp-block-heading em,
 .hero-sobre .display em,
@@ -691,18 +734,18 @@ button.btn:hover .btn-arrow,
 .hero-dark .lede,
 .hero-dark p,
 .hero-sobre .lede,
-.hero-sobre p { color: rgba(240,229,214,0.85); }
-.hero-dark .tagline-en { color: var(--copper-soft); border-color: rgba(231,200,176,0.35); }
+.hero-sobre p { color: var(--tint-cream-85); }
+.hero-dark .tagline-en { color: var(--copper-soft); border-color: var(--tint-rose-tan-35); }
 .hero-dark .tagline-en::before,
 .hero-dark .tagline-en::after { background: var(--copper-soft); }
 .hero-dark .btn-secondary .wp-block-button__link,
 .hero-dark .wp-block-button.btn-secondary .wp-block-button__link,
 .hero-sobre .btn-secondary .wp-block-button__link,
 .hero-sobre .wp-block-button.btn-secondary .wp-block-button__link {
-  color: #F0E5D6; border-color: var(--copper-soft); background: transparent;
+  color: var(--cream); border-color: var(--copper-soft); background: transparent;
 }
 .hero-dark .wp-block-button.btn-secondary .wp-block-button__link:hover,
-.hero-sobre .wp-block-button.btn-secondary .wp-block-button__link:hover { background: rgba(231,200,176,0.10); }
+.hero-sobre .wp-block-button.btn-secondary .wp-block-button__link:hover { background: var(--tint-rose-tan-10); }
 
 
 /* hero-dark: hide copper petals/vine, show brand line graphic */
@@ -729,7 +772,7 @@ button.btn:hover .btn-arrow,
   background:
     linear-gradient(to right, rgba(17,34,64,0.93) 0%, rgba(13,27,46,0.78) 55%, rgba(13,27,46,0.55) 100%),
     url('assets/hero-nosotros-ref.webp') 50% 20% / cover no-repeat;
-  color: #F0E5D6;
+  color: var(--cream);
 }
 @media (max-width: 768px) {
   .hero-sobre::after { display: none; }
@@ -756,8 +799,8 @@ button.btn:hover .btn-arrow,
       circle at 50% 50%,
       transparent,
       transparent 34px,
-      rgba(184,115,51,0.07) 35px,
-      rgba(184,115,51,0.07) 36px
+      var(--tint-copper-7) 35px,
+      var(--tint-copper-7) 36px
     );
   opacity: 0.9;
 }
@@ -772,8 +815,8 @@ button.btn:hover .btn-arrow,
 .featured-dark::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(800px 500px at 20% 20%, rgba(184,115,51,0.18), transparent 60%),
-    radial-gradient(600px 400px at 90% 80%, rgba(212,152,102,0.10), transparent 60%);
+    radial-gradient(800px 500px at 20% 20%, var(--tint-copper-18), transparent 60%),
+    radial-gradient(600px 400px at 90% 80%, var(--tint-copper-soft-10), transparent 60%);
   pointer-events: none;
 }
 .featured-dark-inner {
@@ -786,13 +829,13 @@ button.btn:hover .btn-arrow,
 .featured-dark .eyebrow::before { background: var(--copper-soft); }
 .featured-dark h2.section-h,
 .featured-dark .section-h,
-.featured-dark .wp-block-heading { color: #F0E5D6; }
+.featured-dark .wp-block-heading { color: var(--cream); }
 .featured-dark h2.section-h em,
 .featured-dark .section-h em,
 .featured-dark .wp-block-heading em { color: var(--copper-soft); }
 .featured-dark .lede,
 .featured-dark p.lede,
-.featured-dark .has-text-color.has-cream-color { color: rgba(240,229,214,0.85); }
+.featured-dark .has-text-color.has-cream-color { color: var(--tint-cream-85); }
 .featured-dark .spec-list {
   list-style: none; padding: 0; margin: 0 0 32px;
   display: grid; grid-template-columns: 1fr 1fr;
@@ -802,8 +845,8 @@ button.btn:hover .btn-arrow,
   margin-bottom: 24px;
 }
 .featured-dark .spec-list li {
-  font-family: 'Mulish', sans-serif; font-size: 14.5px;
-  color: rgba(240,229,214,0.85);
+  font-family: var(--font-body); font-size: 14.5px;
+  color: var(--tint-cream-85);
   padding-left: 18px; position: relative;
 }
 .featured-dark .spec-list li::before {
@@ -815,7 +858,7 @@ button.btn:hover .btn-arrow,
 .featured-dark .wp-block-button.btn-secondary .wp-element-button,
 .featured-dark .is-style-btn-secondary .wp-block-button__link,
 .featured-dark .is-style-btn-secondary .wp-element-button {
-  color: #F0E5D6 !important;
+  color: var(--cream) !important;
   border-color: var(--copper-soft) !important;
   background: transparent !important;
   background-color: transparent !important;
@@ -825,10 +868,10 @@ button.btn:hover .btn-arrow,
 .featured-dark .wp-block-button.btn-secondary .wp-element-button:hover,
 .featured-dark .is-style-btn-secondary .wp-block-button__link:hover,
 .featured-dark .is-style-btn-secondary .wp-element-button:hover {
-  background-color: rgba(231,200,176,0.10) !important;
+  background-color: var(--tint-rose-tan-10) !important;
   background-image: none !important;
   border-color: var(--copper-soft) !important;
-  color: #F0E5D6 !important;
+  color: var(--cream) !important;
   transform: scale(1.035) translateY(-1px);
 }
 
@@ -844,9 +887,9 @@ button.btn:hover .btn-arrow,
 }
 .ink-block .product-halo {
   inset: 12% 8%;
-  background: radial-gradient(circle at 50% 45%, rgba(184,115,51,0.45) 0%, rgba(184,115,51,0.18) 35%, transparent 72%);
+  background: radial-gradient(circle at 50% 45%, var(--tint-copper-45) 0%, var(--tint-copper-18) 35%, transparent 72%);
 }
-.ink-block .product-ring { border-color: rgba(212,152,102,0.45); }
+.ink-block .product-ring { border-color: var(--tint-copper-soft-45); }
 .ink-block .product-ring::before { background: var(--copper-soft); }
 .ink-block img,
 .ink-block .wp-block-image img {
@@ -900,7 +943,7 @@ button.btn:hover .btn-arrow,
 
 /* ===================== TESTIMONIALS ===================== */
 .testimonials {
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  background: var(--gradient-brand-bar);
   padding: clamp(4rem, 7vw, 6rem) 32px;
   border-top: 1px solid var(--hairline);
   border-bottom: 1px solid var(--hairline);
@@ -920,20 +963,20 @@ button.btn:hover .btn-arrow,
 .quote-card::before {
   content: "\201C";
   position: absolute; top: 8px; left: 22px;
-  font-family: 'Fraunces', serif; font-style: italic;
+  font-family: var(--font-heading); font-style: italic;
   font-size: 56px; line-height: 1;
   color: var(--copper-soft); opacity: 0.7;
 }
 .quote-card blockquote,
 .quote-card .wp-block-quote {
   margin: 18px 0 24px; padding: 0;
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
   font-size: 19px; line-height: 1.5; color: var(--text);
   text-wrap: pretty; border: 0; background: transparent;
 }
-.quote-card .author { font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 13px; color: var(--text); margin: 0; }
+.quote-card .author { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--text); margin: 0; }
 .quote-card .role {
-  font-family: 'Mulish', sans-serif; font-size: 11px;
+  font-family: var(--font-body); font-size: 11px;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 4px 0 0;
@@ -957,7 +1000,7 @@ button.btn:hover .btn-arrow,
 }
 .cta-strip h2,
 .cta-strip .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 400;
+  font-family: var(--font-heading); font-weight: 400;
   font-size: clamp(28px, 3vw, 38px); line-height: 1.1;
   margin: 0 0 14px; color: var(--text);
   text-wrap: balance;
@@ -966,7 +1009,7 @@ button.btn:hover .btn-arrow,
 .cta-strip h2 em,
 .cta-strip .wp-block-heading em { font-style: italic; font-weight: 300; color: var(--copper-deep); }
 .cta-strip p {
-  font-family: 'Mulish', sans-serif; color: var(--text-muted);
+  font-family: var(--font-body); color: var(--text-muted);
   font-size: 15.5px; line-height: 1.65; margin: 0;
   position: relative; z-index: 2;
 }
@@ -985,13 +1028,13 @@ a.channel-link {
 }
 a.channel-link:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); background: var(--surface); }
 a.channel-link .label {
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 11px;
+  font-family: var(--font-body); font-weight: 600; font-size: 11px;
   letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 a.channel-link .value {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 17px; color: var(--text);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--medium); color: var(--text);
 }
 /* When channel-link is on a <p> wrapper, the wrapper is just a transparent shell. */
 p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: none; }
@@ -1023,27 +1066,27 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 
 .foot-col h4,
 .foot-col .wp-block-heading {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep); margin: 0 0 14px;
 }
 .foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .foot-col a {
-  font-family: 'Mulish', sans-serif; font-size: 14px;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
   color: var(--text-muted); text-decoration: none;
   transition: color .35s var(--ease-spa);
 }
 .foot-col a:hover { color: var(--copper-deep); }
 .foot-col .signature {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 17px; color: var(--copper-deep);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--medium); color: var(--copper-deep);
   display: block; margin-top: 10px;
 }
 .foot-bottom {
   max-width: var(--wide-size); margin: 36px auto 0;
   padding-top: 24px; border-top: 1px solid var(--hairline);
   display: flex; justify-content: space-between; align-items: center;
-  font-family: 'Mulish', sans-serif; font-size: 11px;
+  font-family: var(--font-body); font-size: 11px;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted);
 }
 
@@ -1052,7 +1095,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   position: absolute; pointer-events: none; z-index: 1;
   width: 90px; height: 38px;
   border-radius: 50% 50% 50% 50% / 100% 100% 0 0;
-  background: radial-gradient(ellipse at 50% 80%, rgba(184,115,51,0.18) 0%, rgba(184,115,51,0.04) 70%, transparent 100%);
+  background: radial-gradient(ellipse at 50% 80%, var(--tint-copper-18) 0%, var(--tint-copper-4) 70%, transparent 100%);
   opacity: 0.85;
   animation: float 12s ease-in-out infinite;
   display: block;
@@ -1118,7 +1161,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .trio-card::after {
   content: ""; position: absolute; inset: 1px;
   border-radius: var(--radius-card); pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px rgba(231,200,176,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px var(--tint-rose-tan-35);
 }
 .trio-card .stage {
   position: relative; aspect-ratio: 1 / 0.95;
@@ -1134,7 +1177,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .trio-card .stage .ring {
   position: absolute; inset: 2%; border-radius: 50%;
-  border: 1px dashed rgba(184,115,51,0.35); z-index: 1;
+  border: 1px dashed var(--tint-copper-35); z-index: 1;
   animation: rotate 60s linear infinite;
   display: block;
 }
@@ -1147,14 +1190,14 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .trio-card .stage .wp-block-image img {
   position: relative; z-index: 2;
   max-width: 78%; max-height: 88%; object-fit: contain;
-  filter: drop-shadow(0 24px 22px rgba(61,30,42,0.22));
+  filter: drop-shadow(0 24px 22px var(--tint-aubergine-22));
   transition: transform 1s var(--ease-spa);
 }
 .trio-card:hover .stage img,
 .trio-card:hover .stage .wp-block-image img { transform: translateY(-4px) scale(1.02); }
 .trio-card .cat-tag {
   align-self: flex-start;
-  font-family: 'Mulish', sans-serif; font-size: 11px;
+  font-family: var(--font-body); font-size: 11px;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--copper-deep);
   background: var(--surface-2); border: 1px solid var(--hairline);
   padding: 6px 12px; border-radius: var(--radius-pill);
@@ -1163,13 +1206,13 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .trio-card h3,
 .trio-card .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 26px; line-height: 1.15;
   margin: 0 0 10px; color: var(--text);
   position: relative; z-index: 2; text-wrap: balance;
 }
 .trio-card p {
-  font-family: 'Mulish', sans-serif; font-size: 14.5px; line-height: 1.65;
+  font-family: var(--font-body); font-size: 14.5px; line-height: 1.65;
   color: var(--text-muted); margin: 0 0 14px;
   position: relative; z-index: 2;
 }
@@ -1179,7 +1222,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   position: relative; z-index: 2;
 }
 .trio-card .feat-list li {
-  font-family: 'Mulish', sans-serif; font-size: 13px; line-height: 1.5;
+  font-family: var(--font-body); font-size: 13px; line-height: 1.5;
   color: var(--text-muted); padding-left: 16px; position: relative;
 }
 .trio-card .feat-list li::before {
@@ -1189,7 +1232,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .trio-card .card-link {
   margin-top: auto;
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: 12px;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
@@ -1207,7 +1250,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* ===================== TOC ===================== */
 .toc {
   padding: clamp(4rem, 7vw, 6rem) 32px;
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  background: var(--gradient-brand-bar);
   border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
 }
 .toc-inner { max-width: var(--wide-size); margin: 0 auto; }
@@ -1224,27 +1267,27 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .toc-list li { padding: 0; margin: 0; }
 .toc-num {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 32px; color: var(--copper-deep);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--x-large); color: var(--copper-deep);
   letter-spacing: 0.05em;
 }
 .toc-label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep); display: block; margin-bottom: 6px;
 }
 .toc-title {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 24px; line-height: 1.15;
   color: var(--text); text-wrap: balance; display: block;
 }
 .toc-title em { font-style: italic; font-weight: 300; color: var(--copper-deep); }
 .toc-items {
-  font-family: 'Mulish', sans-serif; font-size: 14px; line-height: 1.55;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small); line-height: 1.55;
   color: var(--text-muted); text-wrap: pretty;
 }
 .toc-arrow {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   display: inline-flex; align-items: center; gap: 8px;
@@ -1273,24 +1316,24 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .step-card::after {
   content: ""; position: absolute; inset: 1px;
   border-radius: var(--radius-card); pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px rgba(231,200,176,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px var(--tint-rose-tan-35);
 }
 .step-num {
   position: relative; z-index: 1;
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
   font-size: 64px; line-height: 1; color: var(--copper);
   display: block; margin-bottom: 18px;
   letter-spacing: -0.02em;
 }
 .step-card h3,
 .step-card .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
-  font-size: 22px; line-height: 1.2;
+  font-family: var(--font-heading); font-weight: 500;
+  font-size: var(--wp--preset--font-size--large); line-height: 1.2;
   margin: 0 0 12px; color: var(--text);
   position: relative; z-index: 1; text-wrap: balance;
 }
 .step-card p {
-  font-family: 'Mulish', sans-serif; font-size: 15px; line-height: 1.65;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.65;
   color: var(--text-muted); margin: 0;
   position: relative; z-index: 1; text-wrap: pretty;
 }
@@ -1301,8 +1344,8 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .pdf-cta { padding: clamp(4rem, 7vw, 5rem) 32px; position: relative;}
 .pdf-cta-inner {
   max-width: var(--wide-size); margin: 0 auto;
-  background: linear-gradient(180deg, var(--aubergine) 0%, var(--aubergine-deep) 100%);
-  color: #F0E5D6; border-radius: var(--radius-card);
+  background: var(--gradient-dark);
+  color: var(--cream); border-radius: var(--radius-card);
   padding: 64px 56px;
   box-shadow: 0 40px 80px -40px rgba(0,0,0,0.55);
   position: relative; overflow: hidden;
@@ -1310,8 +1353,8 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .pdf-cta-inner::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(800px 500px at 20% 20%, rgba(184,115,51,0.20), transparent 60%),
-    radial-gradient(600px 400px at 90% 80%, rgba(212,152,102,0.12), transparent 60%);
+    radial-gradient(800px 500px at 20% 20%, var(--tint-copper-20), transparent 60%),
+    radial-gradient(600px 400px at 90% 80%, var(--tint-copper-soft-12), transparent 60%);
   pointer-events: none;
 }
 .pdf-cta-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; text-align: center; }
@@ -1319,35 +1362,35 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .pdf-cta .eyebrow::before { background: var(--copper-soft); }
 .pdf-cta h2,
 .pdf-cta .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 400;
+  font-family: var(--font-heading); font-weight: 400;
   font-size: clamp(32px, 3.4vw, 44px); line-height: 1.1;
-  margin: 0 0 14px; color: #F0E5D6; text-wrap: balance;
+  margin: 0 0 14px; color: var(--cream); text-wrap: balance;
 }
 .pdf-cta h2 em,
 .pdf-cta .wp-block-heading em { font-style: italic; font-weight: 300; color: var(--copper-soft); }
 .pdf-cta p {
-  font-family: 'Mulish', sans-serif; font-size: 16px; line-height: 1.7;
-  color: rgba(240,229,214,0.85); margin: 0 0 32px;
+  font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+  color: var(--tint-cream-85); margin: 0 0 32px;
   max-width: 60ch; margin-left: auto; margin-right: auto;
 }
 .pdf-cta .cta-row { justify-content: center; }
 .pdf-cta .wp-block-button.btn-secondary .wp-block-button__link {
-  color: #F0E5D6; border-color: var(--copper-soft); background: transparent !important;
+  color: var(--cream); border-color: var(--copper-soft); background: transparent !important;
 }
 .pdf-cta .wp-block-button.btn-secondary .wp-block-button__link:hover {
-  background: rgba(231,200,176,0.10) !important;
+  background: var(--tint-rose-tan-10) !important;
 }
 .pdf-cta .tagline-en {
   color: var(--copper-soft);
-  border-color: rgba(231,200,176,0.30);
+  border-color: var(--tint-rose-tan-30);
   margin-top: 28px;
 }
 .pdf-cta .tagline-en::before, .pdf-cta .tagline-en::after { background: var(--copper-soft); }
 .whatsapp-direct {
   display: inline-block; margin-top: 28px;
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-  color: #F0E5D6;
+  color: var(--cream);
   border-bottom: 1px solid var(--copper-soft); padding-bottom: 4px;
   text-decoration: none;
   transition: color .35s var(--ease-spa);
@@ -1361,20 +1404,20 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
   position: relative; overflow: hidden;
 }
-.story-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.story-inner { max-width: var(--content-size); margin: 0 auto; text-align: center; }
 .story .lotus-divider {
   position: relative; height: 80px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 28px; max-width: 720px;
 }
 .pull-quote {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
   font-size: clamp(26px, 3vw, 36px); line-height: 1.25;
   color: var(--copper);
   margin: 0 auto 32px; max-width: 22ch; text-wrap: balance;
 }
 .story-prose p {
-  font-family: 'Mulish', sans-serif; font-size: 17px; line-height: 1.72;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--medium); line-height: 1.72;
   color: var(--text); margin: 0 auto 16px;
   max-width: 62ch; text-wrap: pretty;
 }
@@ -1400,7 +1443,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .pillar::after {
   content: ""; position: absolute; inset: 1px;
   border-radius: var(--radius-card); pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px rgba(231,200,176,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px var(--tint-rose-tan-35);
 }
 .pillar-icon {
   position: relative; z-index: 1;
@@ -1418,13 +1461,13 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .pillar h3,
 .pillar .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 24px; line-height: 1.2;
   margin: 0 0 12px; color: var(--text);
   position: relative; z-index: 1;
 }
 .pillar p {
-  font-family: 'Mulish', sans-serif; font-size: 15px; line-height: 1.65;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.65;
   color: var(--text-muted); margin: 0;
   position: relative; z-index: 1; text-wrap: pretty;
 }
@@ -1463,12 +1506,12 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .benefit-item h4,
 .benefit-item .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 18px; line-height: 1.2;
   margin: 0 0 8px; color: var(--text);
 }
 .benefit-item p {
-  font-family: 'Mulish', sans-serif; font-size: 14px; line-height: 1.6;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small); line-height: 1.6;
   color: var(--text-muted); margin: 0; text-wrap: pretty;
 }
 
@@ -1482,8 +1525,8 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   justify-content: center;
 }
 .audience-chip {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
-  font-size: 17px;
+  font-family: var(--font-heading); font-style: italic; font-weight: 400;
+  font-size: var(--wp--preset--font-size--medium);
   padding: 12px 22px;
   background: var(--surface); border: 1px solid var(--hairline);
   border-radius: var(--radius-pill);
@@ -1516,17 +1559,17 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .form-card::after {
   content: ""; position: absolute; inset: 1px;
   border-radius: var(--radius-card); pointer-events: none;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px rgba(231,200,176,0.35);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -40px 80px -40px var(--tint-rose-tan-35);
 }
 .form-card h2,
 .form-card .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 28px; line-height: 1.15;
   margin: 0 0 8px; color: var(--text);
   position: relative; z-index: 1;
 }
 .form-card .form-intro {
-  font-family: 'Mulish', sans-serif; font-size: 14.5px;
+  font-family: var(--font-body); font-size: 14.5px;
   color: var(--text-muted); margin: 0 0 28px;
   position: relative; z-index: 1;
 }
@@ -1537,14 +1580,14 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .form-field { display: flex; flex-direction: column; gap: 6px; }
 .form-field.wide { grid-column: 1 / -1; }
 .form-field label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 .form-field input,
 .form-field select,
 .form-field textarea {
-  font-family: 'Mulish', sans-serif; font-size: 15px;
+  font-family: var(--font-body); font-size: 15px;
   color: var(--text); background: var(--bg);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-soft);
@@ -1557,7 +1600,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .form-field select:focus,
 .form-field textarea:focus {
   outline: none; border-color: var(--copper);
-  box-shadow: 0 0 0 4px rgba(184,115,51,0.12);
+  box-shadow: 0 0 0 4px var(--tint-copper-12);
   background: var(--surface);
 }
 .form-field select {
@@ -1575,7 +1618,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* ===================== INFO STACK ===================== */
 .info-stack { display: flex; flex-direction: column; gap: 24px; }
 .info-card {
-  background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+  background: var(--gradient-brand-bar);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
   padding: 36px 32px;
@@ -1591,20 +1634,20 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .info-card h3,
 .info-card .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
-  font-size: 22px; line-height: 1.2;
+  font-family: var(--font-heading); font-weight: 500;
+  font-size: var(--wp--preset--font-size--large); line-height: 1.2;
   margin: 0 0 18px; color: var(--text);
 }
 .info-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
 .info-list li { display: flex; flex-direction: column; gap: 2px; }
 .info-list .label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 .info-list .value {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 17px; color: var(--text);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--medium); color: var(--text);
 }
 .info-list a.value {
   text-decoration: underline; text-decoration-thickness: 1px;
@@ -1619,20 +1662,20 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   padding: 28px 32px; position: relative;
 }
 .hours-card .label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
   display: block; margin-bottom: 8px;
 }
 .hours-card .hours {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 22px; line-height: 1.3; color: var(--text);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--large); line-height: 1.3; color: var(--text);
   margin: 0;
 }
 .hours-card .location {
   margin-top: 14px; padding-top: 14px;
   border-top: 1px solid var(--hairline);
-  font-family: 'Mulish', sans-serif; font-size: 14px;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
   color: var(--text-muted);
 }
 .hours-card .location strong { color: var(--text); font-weight: 600; }
@@ -1640,7 +1683,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* ===================== TRUST ===================== */
 .trust {
   padding: clamp(4rem, 7vw, 6rem) 32px;
-  background: linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%);
+  background: var(--gradient-footer);
   border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
 }
 .trust-head { max-width: 720px; margin: 0 auto var(--section-head-gap); text-align: center; }
@@ -1674,12 +1717,12 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 }
 .trust-item h3,
 .trust-item .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 20px; line-height: 1.2;
   margin: 0 0 10px; color: var(--text);
 }
 .trust-item p {
-  font-family: 'Mulish', sans-serif; font-size: 14.5px; line-height: 1.6;
+  font-family: var(--font-body); font-size: 14.5px; line-height: 1.6;
   color: var(--text-muted); margin: 0; text-wrap: pretty;
 }
 
@@ -1705,7 +1748,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   padding: 22px 28px;
   cursor: pointer;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  font-family: 'Fraunces', serif; font-weight: 500;
+  font-family: var(--font-heading); font-weight: 500;
   font-size: 19px; line-height: 1.3;
   color: var(--text);
   transition: background .35s var(--ease-spa), color .35s var(--ease-spa);
@@ -1716,7 +1759,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .faq-item summary::marker { display: none; content: ""; }
 .faq-item summary::after {
   content: "+";
-  font-family: 'Fraunces', serif; font-weight: 300;
+  font-family: var(--font-heading); font-weight: 300;
   font-size: 28px; line-height: 1; color: var(--copper);
   transition: transform .45s var(--ease-spa), color .35s var(--ease-spa);
   flex-shrink: 0;
@@ -1728,7 +1771,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .faq-item > p,
 .faq-item .wp-block-details__content {
   padding: 0 28px 24px;
-  font-family: 'Mulish', sans-serif; font-size: 15px; line-height: 1.7;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.7;
   color: var(--text-muted); text-wrap: pretty;
 }
 .faq-answer p { margin: 0; }
@@ -1869,7 +1912,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   .foot-inner { grid-template-columns: 1fr; }
   .foot-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
   a.channel-link, p.channel-link a { flex-direction: column; align-items: flex-start; gap: 4px; border-radius: var(--radius-soft); }
-  .faq-item summary { font-size: 17px; padding: 18px 22px; }
+  .faq-item summary { font-size: var(--wp--preset--font-size--medium); padding: 18px 22px; }
   .faq-answer { padding: 0 22px 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1897,13 +1940,13 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* ===================== BLOCK-MARKUP FORM RENDERING ===================== */
 /* Form fields rendered as paragraphs (no <input> in core blocks) */
 .form-field .form-label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 0;
 }
 .form-field .form-input {
-  font-family: 'Mulish', sans-serif; font-size: 15px;
+  font-family: var(--font-body); font-size: 15px;
   color: var(--text-muted);
   background: var(--bg);
   border: 1px solid var(--hairline);
@@ -1913,7 +1956,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   min-height: 48px;
 }
 .form-field .form-textarea {
-  font-family: 'Mulish', sans-serif; font-size: 15px;
+  font-family: var(--font-body); font-size: 15px;
   color: var(--text-muted);
   background: var(--bg);
   border: 1px solid var(--hairline);
@@ -1928,14 +1971,14 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
   width: 100%;
   justify-content: center;
   display: inline-flex; align-items: center; gap: 10px;
-  background: linear-gradient(180deg, var(--copper) 0%, var(--copper-deep) 100%);
-  color: #FBF5EA;
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 14px;
+  background: var(--gradient-button);
+  color: var(--surface);
+  font-family: var(--font-body); font-weight: 600; font-size: var(--wp--preset--font-size--small);
   letter-spacing: 0.08em; text-transform: uppercase;
   padding: 16px 32px;
   border-radius: var(--radius-pill);
   border: none;
-  box-shadow: 0 12px 28px -14px rgba(142,79,31,0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+  box-shadow: 0 12px 28px -14px var(--tint-copper-deep-55), inset 0 1px 0 rgba(255,255,255,0.18);
   transition: transform .45s var(--ease-spa), box-shadow .45s var(--ease-spa);
   text-decoration: none;
 }
@@ -1945,15 +1988,15 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 .info-list .info-item { display: flex; flex-direction: column; gap: 2px; }
 .info-list .info-item .label,
 .info-list .info-item p.label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
   margin: 0;
 }
 .info-list .info-item .value,
 .info-list .info-item p.value {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 17px; color: var(--text);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--medium); color: var(--text);
   margin: 0;
 }
 .info-list .info-item p.value a {
@@ -1967,7 +2010,7 @@ p.channel-link { padding: 0; border: 0; background: transparent; box-shadow: non
 /* Hours card location block */
 .hours-card .location p {
   margin: 0;
-  font-family: 'Mulish', sans-serif; font-size: 14px;
+  font-family: var(--font-body); font-size: var(--wp--preset--font-size--small);
   color: var(--text-muted);
 }
 .hours-card .location p strong { color: var(--text); font-weight: 600; }
@@ -1985,13 +2028,13 @@ p.channel-link a {
 }
 p.channel-link a:hover { transform: translateX(4px); box-shadow: var(--shadow-soft); background: var(--surface); }
 p.channel-link a .label {
-  font-family: 'Mulish', sans-serif; font-weight: 600;
+  font-family: var(--font-body); font-weight: 600;
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: var(--copper-deep);
 }
 p.channel-link a .value {
-  font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-  font-size: 17px; color: var(--text);
+  font-family: var(--font-heading); font-style: italic; font-weight: 300;
+  font-size: var(--wp--preset--font-size--medium); color: var(--text);
 }
 
 /* Card-link rendered as paragraph */
@@ -1999,7 +2042,7 @@ p.card-link {
   margin: 0;
 }
 p.card-link a {
-  font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 12px;
+  font-family: var(--font-body); font-weight: 600; font-size: 12px;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--copper-deep); text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px;
@@ -2045,8 +2088,8 @@ p.toc-row a:hover .toc-arrow { color: var(--aubergine); transform: translateX(4p
 /* PDF CTA inner wrapper (block markup) */
 .pdf-cta-inner {
   max-width: var(--wide-size); margin: 0 auto;
-  background: linear-gradient(180deg, var(--aubergine) 0%, var(--aubergine-deep) 100%);
-  color: #F0E5D6;
+  background: var(--gradient-dark);
+  color: var(--cream);
   border-radius: var(--radius-card);
   padding: 64px 56px;
   text-align: center;
@@ -2056,13 +2099,13 @@ p.toc-row a:hover .toc-arrow { color: var(--aubergine); transform: translateX(4p
 .pdf-cta-inner::before {
   content: ""; position: absolute; inset: 0;
   background:
-    radial-gradient(800px 500px at 20% 20%, rgba(184,115,51,0.18), transparent 60%),
-    radial-gradient(600px 400px at 90% 80%, rgba(212,152,102,0.10), transparent 60%);
+    radial-gradient(800px 500px at 20% 20%, var(--tint-copper-18), transparent 60%),
+    radial-gradient(600px 400px at 90% 80%, var(--tint-copper-soft-10), transparent 60%);
   pointer-events: none;
 }
 .pdf-cta-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
-.pdf-cta-content p { color: rgba(240,229,214,0.85); }
-.pdf-cta-content .tagline-en { margin: 24px auto 12px; color: var(--copper-soft); border-color: rgba(231,200,176,0.35); }
+.pdf-cta-content p { color: var(--tint-cream-85); }
+.pdf-cta-content .tagline-en { margin: 24px auto 12px; color: var(--copper-soft); border-color: var(--tint-rose-tan-35); }
 .pdf-cta-content .tagline-en::before, .pdf-cta-content .tagline-en::after { background: var(--copper-soft); }
 .pdf-cta-content .whatsapp-direct {
   margin-top: 12px;
@@ -2073,11 +2116,11 @@ p.toc-row a:hover .toc-arrow { color: var(--aubergine); transform: translateX(4p
   display: block;
 }
 .pdf-cta-content .whatsapp-direct a {
-  font-family: 'Mulish', sans-serif; font-size: 13px;
-  color: rgba(240,229,214,0.7); text-decoration: underline;
+  font-family: var(--font-body); font-size: 13px;
+  color: var(--tint-cream-70); text-decoration: underline;
   text-decoration-color: var(--copper-soft); text-underline-offset: 4px;
 }
-.pdf-cta-content .whatsapp-direct a:hover { color: #F0E5D6; text-decoration-color: var(--copper); }
+.pdf-cta-content .whatsapp-direct a:hover { color: var(--cream); text-decoration-color: var(--copper); }
 
 /* Audience chip cloud */
 .chip-cloud {
@@ -2087,8 +2130,8 @@ p.toc-row a:hover .toc-arrow { color: var(--aubergine); transform: translateX(4p
 p.audience-chip,
 .audience-chip {
   margin: 0;
-  font-family: 'Mulish', sans-serif; font-weight: 500;
-  font-size: 14px; letter-spacing: 0.04em;
+  font-family: var(--font-body); font-weight: 500;
+  font-size: var(--wp--preset--font-size--small); letter-spacing: 0.04em;
   color: var(--text);
   background: var(--surface);
   border: 1px solid var(--hairline);
@@ -2126,7 +2169,7 @@ p.audience-chip:hover,
 .story { padding: clamp(4rem, 7vw, 6rem) 32px; position: relative; }
 
 /* Hero centered variant (productos, sobre, contacto) */
-.hero-inner.hero-centered { display: block; max-width: 880px; }
+.hero-inner.hero-centered { display: block; max-width: var(--content-size); }
 @media (min-width: 769px) {
   .hero-inner.hero-centered { text-align: left; }
   .hero-inner.hero-centered .cta-row { justify-content: flex-start; }
@@ -2167,7 +2210,7 @@ p.audience-chip:hover,
 /* FAQ inner content (the wp:paragraph inside details) */
 .faq-item > p {
   padding: 0 28px 24px;
-  font-family: 'Mulish', sans-serif; font-size: 15px; line-height: 1.7;
+  font-family: var(--font-body); font-size: 15px; line-height: 1.7;
   color: var(--text-muted); text-wrap: pretty;
   margin: 0;
 }
@@ -2183,18 +2226,18 @@ p.audience-chip:hover,
 .pdf-cta-content .eyebrow::before { background: var(--copper-soft); }
 .pdf-cta-content h2,
 .pdf-cta-content .wp-block-heading {
-  font-family: 'Fraunces', serif; font-weight: 400;
+  font-family: var(--font-heading); font-weight: 400;
   font-size: clamp(34px, 3.4vw, 44px); line-height: 1.1;
-  color: #F0E5D6; margin: 0 0 18px; text-wrap: balance;
+  color: var(--cream); margin: 0 0 18px; text-wrap: balance;
 }
 .pdf-cta-content h2 em,
 .pdf-cta-content .wp-block-heading em { font-style: italic; font-weight: 300; color: var(--copper-soft); }
 .pdf-cta-content .cta-row { justify-content: center; }
 .pdf-cta-content .btn-secondary .wp-block-button__link {
-  color: #F0E5D6; border-color: var(--copper-soft); background: transparent !important;
+  color: var(--cream); border-color: var(--copper-soft); background: transparent !important;
 }
 .pdf-cta-content .btn-secondary .wp-block-button__link:hover {
-  background: rgba(231,200,176,0.10) !important;
+  background: var(--tint-rose-tan-10) !important;
 }
 
 /* Mobile responsive for new block markup */
