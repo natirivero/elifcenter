@@ -136,7 +136,8 @@ html, body { margin: 0; padding: 0; }
   .featured-trio,
   .scroll-arrow,
   .wp-block-group.story,
-  .pdf-cta
+  .pdf-cta,
+  .form-field
 ).is-layout-flow {
   margin-block-start: 0 !important;
 }
@@ -517,7 +518,7 @@ button.btn:hover .btn-arrow,
 /* ===================== HERO ===================== */
 .hero {
   position: relative;
-  padding: clamp(4rem, 6vw, 5rem) 32px clamp(4rem, 6vw, 5rem);
+  padding: clamp(4rem, 5vw, 6rem) 32px clamp(4rem, 6vw, 7rem);
   overflow: hidden;
 }
 .hero-inner {
@@ -719,7 +720,7 @@ button.btn:hover .btn-arrow,
 .hero-dark {
   background:
     linear-gradient(to right, rgba(17,34,64,0.93) 0%, rgba(13,27,46,0.78) 55%, rgba(13,27,46,0.55) 100%),
-    url('assets/hero-productos-ref.webp') center / cover no-repeat;
+    url('assets/esthetician.webp') right center / cover no-repeat;
   color: var(--cream);
 }
 .hero-dark::before {
