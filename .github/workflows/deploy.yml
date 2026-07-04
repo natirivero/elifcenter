@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.CPANEL_PASSWORD }}
           port: ${{ secrets.CPANEL_PORT }}
           # Exact theme path withi the cPanel:
-          server-dir: public_html/elifcenter.com/wp-content/themes/elif-center/
+          server-dir: /public_html/elifcenter.com/wp-content/themes/elif-center/
           exclude: |
             **/.git*
             **/.git*/**
