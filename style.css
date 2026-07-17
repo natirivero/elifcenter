@@ -1718,6 +1718,37 @@ p.channel-link {
   color: var(--text-muted);
 }
 
+/* ===================== WHATSAPP FLOAT ===================== */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s var(--ease-spa),
+    box-shadow 0.25s var(--ease-spa);
+}
+.whatsapp-float:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
 /* ===================== EMBELLISHMENTS ===================== */
 .petal {
   position: absolute;
