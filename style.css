@@ -742,8 +742,11 @@ button.btn:hover .btn-arrow,
 /* ===================== HERO ===================== */
 .hero {
   position: relative;
-  padding: clamp(1.5rem, 2vw, 2.5rem) 32px clamp(3rem, 4.5vw, 5.5rem);
+  padding: clamp(4rem, 5vw, 6rem) 32px clamp(4rem, 6vw, 7rem);
   overflow: hidden;
+}
+.hero.hero-home {
+  padding: clamp(1.5rem, 2vw, 2.5rem) 32px clamp(3rem, 4.5vw, 5.5rem);
 }
 .hero-inner {
   max-width: var(--wide-size);
