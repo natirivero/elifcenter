@@ -88,11 +88,6 @@
       ],
       "gradients": [
         {
-          "slug": "button-primary",
-          "name": "Button Primary",
-          "gradient": "linear-gradient(180deg, #B87333 0%, #8E4F1F 100%)"
-        },
-        {
           "slug": "brand-bar",
           "name": "Brand Bar",
           "gradient": "linear-gradient(180deg, #FBF5EA 0%, #F9EEDF 100%)"
@@ -313,7 +308,7 @@
       },
       "button": {
         "color": {
-          "background": "var(--wp--preset--gradient--button-primary)",
+          "background": "var(--wp--preset--color--copper)",
           "text": "var(--wp--preset--color--surface)"
         },
         "typography": {

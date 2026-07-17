@@ -52,7 +52,7 @@ Text Domain: elif-center
   --wide-size: var(--wp--style--global--wide-size);
 
   /* Gradients → theme.json */
-  --gradient-button: var(--wp--preset--gradient--button-primary);
+  --gradient-button: var(--wp--preset--color--copper);
   --gradient-brand-bar: var(--wp--preset--gradient--brand-bar);
   --gradient-footer: var(--wp--preset--gradient--footer);
   --gradient-dark: var(--wp--preset--gradient--dark);
@@ -499,9 +499,7 @@ a.btn-pill {
   background: var(--gradient-button);
   color: var(--surface) !important;
   text-decoration: none;
-  box-shadow:
-    0 8px 22px -12px var(--tint-copper-deep-55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: none;
   transition:
     transform 0.35s var(--ease-spa),
     box-shadow 0.35s var(--ease-spa);
@@ -704,9 +702,7 @@ button.btn-primary,
 .wp-block-button.btn-primary .wp-block-button__link {
   background: var(--gradient-button);
   color: var(--surface);
-  box-shadow:
-    0 12px 28px -14px var(--tint-copper-deep-55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 28px -14px var(--tint-copper-deep-55);
   border: 1px solid transparent;
 }
 a.btn-primary:hover,
@@ -714,9 +710,7 @@ button.btn-primary:hover,
 .is-style-btn-primary .wp-block-button__link:hover,
 .wp-block-button.btn-primary .wp-block-button__link:hover {
   transform: scale(1.035) translateY(-1px);
-  box-shadow:
-    0 18px 38px -16px var(--tint-copper-deep-65),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 38px -16px var(--tint-copper-deep-65);
 }
 
 a.btn-secondary,
@@ -3326,9 +3320,7 @@ p.channel-link {
   padding: 16px 32px;
   border-radius: var(--radius-pill);
   border: none;
-  box-shadow:
-    0 12px 28px -14px var(--tint-copper-deep-55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 28px -14px var(--tint-copper-deep-55);
   transition:
     transform 0.45s var(--ease-spa),
     box-shadow 0.45s var(--ease-spa);
