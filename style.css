@@ -266,8 +266,8 @@ body {
 /* ===================== BRAND BAR / HEADER ===================== */
 /* ===================== TOP BAR ===================== */
 .topbar {
-  background: #1e2e44;
-  color: var(--tint-cream-88);
+  background: #223754;
+  color: #fff;
   font-size: var(--text-x-small);
   letter-spacing: 0.04em;
   border-bottom: 1px solid rgba(126, 184, 232, 0.12);
@@ -291,15 +291,15 @@ body {
 .topbar-tagline {
   margin-right: auto;
   font-style: italic;
-  color: var(--tint-cream-88);
+  color: #fff;
 }
 .topbar-contact {
-  color: var(--tint-cream-88);
+  color: #fff;
   text-decoration: none;
   transition: color 0.2s;
 }
 .topbar-contact:hover {
-  color: var(--copper-soft);
+  color: var(--cream);
 }
 .topbar-divider {
   width: 1px;
